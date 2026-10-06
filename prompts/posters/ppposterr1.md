@@ -1,0 +1,11 @@
+Redesign the attached poster as a Facebook post (1080x1350 px), keeping the exact same layout, style, composition, and visual elements.
+
+Rules:
+1. Replace any logo in the poster with my attached logo, and use my logo's color palette across the whole design (backgrounds, text, shapes, buttons).
+2. We are a software company specializing in website design and development. Whatever the original poster's topic is (marketing, SEO, graphic design, or anything else), adapt ALL of its content so it fits websites, web design, and web development.
+3. Read every piece of text in the original poster and rewrite it in Arabic, keeping the same meaning, structure, and approximate length for each element, but changing the subject to web design and development. Write fresh text based only on what the original says. Do not reuse example sentences.
+4. Remove ALL old company data from the original poster (company name, phone numbers, WhatsApp, email, website, address, social media handles, QR codes, and any other contact details). Replace them only with my details below.
+5. Add my phone numbers clearly at the bottom: +201032076679 | +201279924599
+6. All text must be in Arabic (RTL), clean, correctly connected and spelled, with no broken letters. Phone numbers stay in Latin digits with the +20 prefix.
+7. Keep the same font style, spacing, and professional look.
+8. Output only the final poster.

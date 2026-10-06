@@ -1,0 +1,16 @@
+https://www.facebook.com/professional_dashboard/
+https://chatgpt.com/c/6ac440de-28c4-83e9-8e6e-89f9c804c184
+https://claude.ai/chat/9ad025db-1373-4cf4-8ed4-e1c5fc0386b6
+https://claude.ai/chat/b1d5139a-9f4c-491f-9b5e-a4eedc0ef61c
+https://claude.ai/chat/492a07ef-de9f-446a-b5e2-efe9ea3dfe24
+https://claude.ai/chat/e2b4e610-6fd1-4eda-8d10-539ebb3fb2c4
+https://claude.ai/chat/68197cf6-044f-4364-8aed-016e5612ad71
+https://claude.ai/chat/62643986-8077-44c6-badd-c01135bdd9a0
+https://claude.ai/chat/bb85d105-8908-4931-a726-ea7bb6f15976
+https://claude.ai/chat/704f3da8-19a8-4504-a231-ea8f85317474
+https://claude.ai/chat/b2958007-c984-4324-bf1f-88a394753228
+https://claude.ai/chat/0465063e-dcbf-44da-8c90-c9bd98ce63a1?artifact=16b351c4-638b-444b-98c3-ca876ff0a205
+https://notevibes.com/wav-player-online?utm_source=chatgpt.com
+https://aistudio.google.com/generate-speech?project=gen-lang-client-0525362377
+https://chatgpt.com/
+about:newtab

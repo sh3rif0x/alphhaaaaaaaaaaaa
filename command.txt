@@ -1,0 +1,115 @@
+google-chrome --remote-debugging-port=9222 --user-data-dir=/home/boot/chrome-debug
+
+
+
+for f in /tmp/openvpn-*.log; do sudo grep -q "Initialization Sequence Completed" "$f" && echo "[+] CONNECTED: $(basename "$f" | sed 's/^openvpn-//;s/\.log$//')"; done
+
+
+
+
+
+sudo pkill openvpn 2>/dev/null; rm -f /tmp/openvpn-*.log; for vpn in *.ovpn; do echo "[*] Starting $vpn"; sudo openvpn --config "$vpn" --auth-user-pass <(printf 'vpnbook\nmrs2e9a\n') --daemon --log "/tmp/openvpn-${vpn%.ovpn}.log"; done; while true; do for vpn in *.ovpn; do if sudo grep -q "Initialization Sequence Completed" "/tmp/openvpn-${vpn%.ovpn}.log" 2>/dev/null; then echo "[+] Connected: $vpn"; for other in *.ovpn; do [ "$other" != "$vpn" ] && sudo pkill -f "openvpn.*$other" 2>/dev/null; done; exit 0; fi; done; sleep 1; done
+for vpn in *.ovpn; do echo "[*] Trying $vpn (60s)"; sudo pkill openvpn 2>/dev/null; sudo rm -f /tmp/openvpn.log; sudo openvpn --config "$vpn" --auth-user-pass <(printf 'vpnbook\nmrs2e9a\n') --daemon --log /tmp/openvpn.log; for i in {1..60}; do sleep 1; if sudo grep -q "Initialization Sequence Completed" /tmp/openvpn.log; then echo "[+] Connected: $vpn"; exit 0; fi; done; sudo pkill openvpn; echo "[-] Failed: $vpn"; done; echo "[-] No VPN connected"
+
+nmcli connection down usa
+
+
+sudo wg show interfaces
+
+
+
+
+
+
+
+
+
+
+
+source ~/.bashrc
+Command 'shopt' not found, did you mean:
+  command 'shout' from deb libshout-tools
+Try: sudo apt install <deb name>
+                                                                                                                                                                                                                                            
+┌──(boot㉿radar)-[~/Desktop]
+└─$ >....                                                                                                                                                                                                                                   
+        s = s.replace('\nsource ~/.cop.sh\n', '\n')
+        p.write_text(s.rstrip() + "\n")
+PY
+
+cat > ~/.cop.sh <<'EOF'
+cop() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: cop <a|h|c|j|name> [more...]"
+        return 1
+    fi
+
+    local tmp input pattern f
+    tmp=$(mktemp) || return 1
+
+    for input in "$@"; do
+        case "$input" in
+            a) pattern="*" ;;
+            h) pattern="*.html" ;;
+            c) pattern="*.css" ;;
+            j) pattern="*.js" ;;
+            *) pattern="${input}*" ;;
+        esac
+
+        find . -type f -name "$pattern" \
+            -not -path '*/node_modules/*' \
+            -not -path '*/.git/*' | sort | while IFS= read -r f; do
+            grep -Iq . "$f" 2>/dev/null || continue
+            printf '\n===== %s =====\n' "$f"
+            cat "$f"
+        done >> "$tmp"
+    done
+
+    if [ ! -s "$tmp" ]; then
+        echo "✗ No files found: $*"
+        rm -f "$tmp"
+        return 1
+    fi
+
+    xclip -selection clipboard < "$tmp"
+    rm -f "$tmp"
+    echo "✓ Copied: $*"
+}
+EOF
+
+for rc in ~/.zshrc ~/.bashrc; do
+    touch "$rc"
+    printf '\nsource ~/.cop.sh\n' >> "$rc"
+done
+
+source ~/.cop.sh
+echo "✓ Done. Try: cop c | cop h j | cop h c j"
+✓ Done. Try: cop c | cop h j | cop h c j
+                                     
+                                     ktop/europeetf]
+└─$ python3 - <<'PY' | xclip -selection clipboard
+import glob
+import re
+
+for file in glob.glob("**/*.css", recursive=True):
+    text = open(file, encoding="utf-8").read()
+
+    for match in re.finditer(r'@media\s*\(\s*max-width\s*:\s*1048px\s*\)\s*\{', text):
+        start = match.start()
+        pos = match.end()
+        depth = 1
+
+        while pos < len(text) and depth:
+            if text[pos] == '{':
+                depth += 1
+            elif text[pos] == '}':
+                depth -= 1
+            pos += 1
+
+        print(f"\n/* ===== {file} ===== */\n")
+        print(text[start:pos])
+PY
+                                                                                                                                                                                                                                            
+┌──(boot㉿radar)-[~/Desktop/europeetf]
+└─$ 
+

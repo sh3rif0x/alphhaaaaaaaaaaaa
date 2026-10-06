@@ -1,0 +1,8 @@
+- **Project structure** → how files and folders are organized.
+- **Application architecture** → how different parts of the app are organized and work together.
+- **Module structure** → how code is split into modules/files and imported/exported.
+- **Data flow** → how data moves between files/components.
+- **Routing** → how URLs map to pages/components (e.g. `/services/:id`).
+- **Dependencies / imports** → how one file communicates with another through `import` / `export`.
+- **API/data layer** → how code gets data from things like `services.json`, a database, or an API.
+- 
